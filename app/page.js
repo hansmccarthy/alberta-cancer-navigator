@@ -202,9 +202,38 @@ export default function Home() {
   return (
     <main className="page">
       <header className="masthead">
-        <h1>Alberta Cancer Navigator</h1>
-        <p>Find the right cancer centre and clinical trials near you.</p>
+        <svg
+          className="brand-mark"
+          viewBox="0 0 44 44"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <rect width="44" height="44" rx="11" fill="var(--red)" />
+          <path
+            d="M8 23 h6 l2.5 -7 l4.5 15 l3 -12 l2.5 4 h7.5"
+            fill="none"
+            stroke="#fff"
+            strokeWidth="2.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <div className="brand-text">
+          <span className="brand-name">Alberta Cancer Navigator</span>
+          <span className="brand-tag">Cancer care &amp; trials in Alberta</span>
+        </div>
       </header>
+
+      <section className="hero">
+        <h1>
+          Find cancer care and <span className="hl">trials</span> near you
+        </h1>
+        <p className="hero-sub">
+          Choose a cancer type and your area. See the Alberta cancer centre for
+          your zone, how a referral works, and clinical trials with a site in
+          Alberta.
+        </p>
+      </section>
 
       <div className="disclaimer">
         <strong>This is not medical advice.</strong> Please talk to your
@@ -260,7 +289,10 @@ export default function Home() {
           onClick={handleSearch}
           disabled={loading}
         >
-          {loading ? "Searching…" : "Search"}
+          <span>{loading ? "Searching…" : "Search"}</span>
+          <span className="btn-arrow" aria-hidden="true">
+            →
+          </span>
         </button>
       </section>
 
